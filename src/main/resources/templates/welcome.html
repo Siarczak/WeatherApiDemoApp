@@ -6,9 +6,12 @@
 </head>
 <body>
 <h1>Weather App</h1>
+
 <form action="#" th:action="@{/welcome}" th:object="${city}" method="post">
-    <p>Input City to get the Weahter: <input type="text" th:field="*{name}" /></p>
+
+    <p>Input city to get the weahter: <input type="text" th:field="*{name}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+
 </form>
 </body>
 </html>

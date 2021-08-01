@@ -9,8 +9,8 @@ import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "lon",
-    "lat"
+        "lon",
+        "lat"
 })
 @Generated("jsonschema2pojo")
 public class Coord {

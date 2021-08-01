@@ -9,9 +9,9 @@ import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "speed",
-    "deg",
-    "gust"
+        "speed",
+        "deg",
+        "gust"
 })
 @Generated("jsonschema2pojo")
 public class Wind {

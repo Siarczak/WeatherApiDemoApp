@@ -10,19 +10,19 @@ import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "coord",
-    "weather",
-    "base",
-    "main",
-    "visibility",
-    "wind",
-    "clouds",
-    "dt",
-    "sys",
-    "timezone",
-    "id",
-    "name",
-    "cod"
+        "coord",
+        "weather",
+        "base",
+        "main",
+        "visibility",
+        "wind",
+        "clouds",
+        "dt",
+        "sys",
+        "timezone",
+        "id",
+        "name",
+        "cod"
 })
 @Generated("jsonschema2pojo")
 public class WeatherApi {
@@ -34,7 +34,7 @@ public class WeatherApi {
     @JsonProperty("base")
     private String base;
     @JsonProperty("main")
-    private Main main;
+    private WeatherDetials main;
     @JsonProperty("visibility")
     private Integer visibility;
     @JsonProperty("wind")
@@ -87,12 +87,12 @@ public class WeatherApi {
     }
 
     @JsonProperty("main")
-    public Main getMain() {
+    public WeatherDetials getMain() {
         return main;
     }
 
     @JsonProperty("main")
-    public void setMain(Main main) {
+    public void setMain(WeatherDetials main) {
         this.main = main;
     }
 
@@ -198,7 +198,7 @@ public class WeatherApi {
 
     @Override
     public String toString() {
-        return "WeatherApi{" +
+        return "Weather is: {" +
                 "coord=" + coord +
                 ", weather=" + weather +
                 ", base='" + base + '\'' +

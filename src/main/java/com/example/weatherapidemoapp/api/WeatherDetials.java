@@ -9,17 +9,17 @@ import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "temp",
-    "feels_like",
-    "temp_min",
-    "temp_max",
-    "pressure",
-    "humidity",
-    "sea_level",
-    "grnd_level"
+        "temp",
+        "feels_like",
+        "temp_min",
+        "temp_max",
+        "pressure",
+        "humidity",
+        "sea_level",
+        "grnd_level"
 })
 @Generated("jsonschema2pojo")
-public class Main {
+public class WeatherDetials {
 
     @JsonProperty("temp")
     private Double temp;
