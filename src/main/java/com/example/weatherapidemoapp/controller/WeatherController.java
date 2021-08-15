@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
@@ -54,16 +55,30 @@ public class WeatherController {
         return "welcome";
     }
 
+    @GetMapping("/error")
+    public String incorrectUserInput(Model model) {
+
+
+
+
+        return "error";
+    }
+
+
 
     @PostMapping("/welcome")
-    public String getCityWeatherByInput(@ModelAttribute WeatherApi weatherApi, Model model) {
+    public String getCityWeatherByInput(@ModelAttribute WeatherApi weatherApi, Model model) throws HttpClientErrorException {
         String cityName = weatherApi.getName();
-        model.addAttribute("city", getWeather(cityName));
-        model.addAttribute("temeperature", getTemp(cityName));
-        model.addAttribute("cityName", cityName);
 
 
-        return "weather";
+            model.addAttribute("city", getWeather(cityName));
+            model.addAttribute("temeperature", getTemp(cityName));
+            model.addAttribute("cityName", cityName);
+            return "weather";
+
+
+
+
     }
 
 
