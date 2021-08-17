@@ -198,21 +198,15 @@ public class WeatherApi {
 
     @Override
     public String toString() {
-        return "Weather is: {" +
-                "coord=" + coord +
-                ", weather=" + weather +
-                ", base='" + base + '\'' +
-                ", main=" + main +
+        return "Weather is: " +
+                "coord= " + coord +
+                " " + main +
                 ", visibility=" + visibility +
-                ", wind=" + wind +
+                ", wind " + wind +
                 ", clouds=" + clouds +
                 ", dt=" + dt +
-                ", sys=" + sys +
                 ", timezone=" + timezone +
-                ", id=" + id +
-                ", name='" + name + '\'' +
-                ", cod=" + cod +
-                ", additionalProperties=" + additionalProperties +
-                '}';
+                ", name='" + name + '\'';
     }
+
 }

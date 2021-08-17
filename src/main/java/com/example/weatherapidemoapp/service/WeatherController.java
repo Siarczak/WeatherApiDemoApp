@@ -62,11 +62,8 @@ public class WeatherController implements WeatherAppDao {
     public String incorrectUserInput(Model model) {
 
 
-
-
         return "error";
     }
-
 
 
     @PostMapping("/welcome")
@@ -74,12 +71,10 @@ public class WeatherController implements WeatherAppDao {
         String cityName = weatherApi.getName();
 
 
-            model.addAttribute("city", getWeather(cityName));
-            model.addAttribute("temeperature", getTemp(cityName));
-            model.addAttribute("cityName", cityName);
-            return "weather";
-
-
+        model.addAttribute("city", getWeather(cityName));
+        model.addAttribute("temeperature", getTemp(cityName));
+        model.addAttribute("cityName", cityName);
+        return "weather";
 
 
     }

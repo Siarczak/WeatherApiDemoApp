@@ -39,11 +39,11 @@ public class Clouds {
         this.additionalProperties.put(name, value);
     }
 
+
     @Override
     public String toString() {
         return "Clouds{" +
-                "all=" + all +
-                ", additionalProperties=" + additionalProperties +
+                all + "%" +
                 '}';
     }
 

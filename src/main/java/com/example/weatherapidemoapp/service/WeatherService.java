@@ -34,7 +34,7 @@ public class WeatherService implements WeatherAppDao {
     public Double getTemp(String city) {
 
         RestTemplate restTemplate = new RestTemplate();
-        WeatherApi weatherJson2Pojo = restTemplate.getForObject("https://api.openweathermap.org/data/2.5/weather?q=" + "London"+ "&appid=" + apiKey, WeatherApi.class);
+        WeatherApi weatherJson2Pojo = restTemplate.getForObject("https://api.openweathermap.org/data/2.5/weather?q=" + "London" + "&appid=" + apiKey, WeatherApi.class);
         BigDecimal kelvinTempToConvert = BigDecimal.valueOf(weatherJson2Pojo.getMain().getTemp());
         BigDecimal kelvinDifference = BigDecimal.valueOf(273.15);
 
@@ -44,12 +44,10 @@ public class WeatherService implements WeatherAppDao {
 
     }
 
-    public final String getInitialCity()
-    {
+    public final String getInitialCity() {
 
         return "London";
     }
-
 
 
 }

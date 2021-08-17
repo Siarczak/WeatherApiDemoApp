@@ -67,11 +67,9 @@ public class Wind {
 
     @Override
     public String toString() {
-        return "Wind{" +
+        return
                 "speed=" + speed +
-                ", deg=" + deg +
-                ", gust=" + gust +
-                ", additionalProperties=" + additionalProperties +
-                '}';
+                        ",wind deg=" + deg +
+                        '}';
     }
 }

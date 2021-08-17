@@ -4,6 +4,8 @@ package com.example.weatherapidemoapp.api;
 import com.fasterxml.jackson.annotation.*;
 
 import javax.annotation.Generated;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,9 +42,19 @@ public class WeatherDetials {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    public double celciusConverter(double temp) {
+        double tempToCelcius = temp - 273.15;
+        BigDecimal tempToCelciusRounded = BigDecimal.valueOf(tempToCelcius);
+        tempToCelciusRounded = tempToCelciusRounded.setScale(2, RoundingMode.HALF_UP);
+
+        return tempToCelciusRounded.doubleValue();
+
+
+    }
+
     @JsonProperty("temp")
     public Double getTemp() {
-        return temp;
+        return celciusConverter(temp);
     }
 
     @JsonProperty("temp")
@@ -52,7 +64,7 @@ public class WeatherDetials {
 
     @JsonProperty("feels_like")
     public Double getFeelsLike() {
-        return feelsLike;
+        return celciusConverter(feelsLike);
     }
 
     @JsonProperty("feels_like")
@@ -62,7 +74,8 @@ public class WeatherDetials {
 
     @JsonProperty("temp_min")
     public Double getTempMin() {
-        return tempMin;
+
+        return celciusConverter(tempMin);
     }
 
     @JsonProperty("temp_min")
@@ -70,9 +83,11 @@ public class WeatherDetials {
         this.tempMin = tempMin;
     }
 
+
     @JsonProperty("temp_max")
     public Double getTempMax() {
-        return tempMax;
+
+        return celciusConverter(tempMax);
     }
 
     @JsonProperty("temp_max")
@@ -130,18 +145,16 @@ public class WeatherDetials {
         this.additionalProperties.put(name, value);
     }
 
+
     @Override
     public String toString() {
-        return "Main{" +
-                "temp=" + temp +
-                ", feelsLike=" + feelsLike +
-                ", tempMin=" + tempMin +
-                ", tempMax=" + tempMax +
-                ", pressure=" + pressure +
-                ", humidity=" + humidity +
-                ", seaLevel=" + seaLevel +
-                ", grndLevel=" + grndLevel +
-                ", additionalProperties=" + additionalProperties +
-                '}';
+        return
+                "temp=" + getTemp() +
+                        ", feelsLike=" + getFeelsLike() +
+                        ", tempMin=" + getTempMin() +
+                        ", tempMax=" + getTempMax() +
+                        ", pressure=" + pressure
+
+                ;
     }
 }

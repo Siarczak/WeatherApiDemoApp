@@ -91,15 +91,4 @@ public class Sys {
         this.additionalProperties.put(name, value);
     }
 
-    @Override
-    public String toString() {
-        return "Sys{" +
-                "type=" + type +
-                ", id=" + id +
-                ", country='" + country + '\'' +
-                ", sunrise=" + sunrise +
-                ", sunset=" + sunset +
-                ", additionalProperties=" + additionalProperties +
-                '}';
-    }
 }
